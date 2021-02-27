@@ -224,5 +224,3 @@ curl -i --request GET 'http://localhost:8001/v1/transfers'
 
 Copyright © 2021 [Jeremie](https://github.com/tranthanh95).<br />
 This project is [MIT](LICENSE) licensed.
-
-https://github.com/GSabadini/go-bank-transfer
