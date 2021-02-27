@@ -4,8 +4,11 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"go-bank-transfer/adapter/repository"
 	"log"
+
+	_ "github.com/lib/pq"
+
+	"go-bank-transfer/adapter/repository"
 )
 
 type postgresHandler struct {

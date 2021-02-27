@@ -13,7 +13,7 @@ ENV GO111MODULE=on \
     POSTGRES_DATABASE=bank \
     POSTGRES_DRIVER=postgres \
     APP_NAME=go-bank-transfer \
-    APP_PORT=3001
+    APP_PORT=8001
 
 WORKDIR /build
 COPY . .

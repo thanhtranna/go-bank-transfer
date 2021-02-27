@@ -19,9 +19,10 @@ type config struct {
 func newConfigMongoDB() *config {
 	return &config{
 		host:       os.Getenv("MONGODB_HOST"),
-		database:   os.Getenv("MONGODB_HOST"),
-		password:   os.Getenv("MONGODB_ROOT_PASSWORD"),
+		database:   os.Getenv("MONGODB_DATABASE"),
+		port:       os.Getenv("MONGODB_PORT"),
 		user:       os.Getenv("MONGODB_ROOT_USER"),
+		password:   os.Getenv("MONGODB_ROOT_PASSWORD"),
 		ctxTimeout: 60 * time.Second,
 	}
 }

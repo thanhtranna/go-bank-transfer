@@ -20,14 +20,19 @@ func NewMongoHandler(c *config) (*mongoHandler, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), c.ctxTimeout)
 	defer cancel()
 
+	credential := options.Credential{
+		Username: c.user,
+		Password: c.password,
+	}
+
 	uri := fmt.Sprintf(
-		"%s://%s:%s@mongodb-primary,mongodb-secondary,mongodb-arbiter/?replicaSet=replicaset",
+		"mongodb://%s:%s/%s?ssl=true",
 		c.host,
-		c.user,
-		c.password,
+		c.port,
+		c.database,
 	)
 
-	clientOpts := options.Client().ApplyURI(uri)
+	clientOpts := options.Client().ApplyURI(uri).SetAuth(credential)
 	client, err := mongo.Connect(ctx, clientOpts)
 	if err != nil {
 		log.Fatal(err)

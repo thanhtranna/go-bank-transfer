@@ -8,7 +8,7 @@ require (
 	github.com/go-playground/universal-translator v0.17.0
 	github.com/go-playground/validator/v10 v10.4.1
 	github.com/gorilla/mux v1.8.0
-	github.com/lib/pq v1.9.0 // indirect
+	github.com/lib/pq v1.9.0
 	github.com/pkg/errors v0.9.1
 	github.com/satori/go.uuid v1.2.0
 	github.com/sirupsen/logrus v1.8.0
